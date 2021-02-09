@@ -1,4 +1,4 @@
-# Super-repository
+# Super-Repo
 This is the repository created for the subject Data Tidying & Reporting, by Pere Fuster
 
 
