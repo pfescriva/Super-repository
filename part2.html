@@ -1,0 +1,80 @@
+
+<html>
+    <head>
+      <style>
+      body {
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+        line-height: 24px;
+      }
+      h1 {
+        color: #e09654;
+        text-align: center;
+        font-size: 34px;
+        font-family: verdana;
+      }
+    
+      p {font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+        line-height: 24px;
+        margin-left: 19px;
+      }
+      input{
+      margin:  10px 40px;
+      }
+      div{
+    margin:  0px 20px;
+      }
+    </style>
+    </head>
+    
+      <body>
+    
+       <select  onChange= getTable() id="options">
+            <option value="opt">Options</option>
+            <option value="1">Option 1</option>
+            <option value="2"> Option 2</option>
+         </select>
+     
+         <script>
+           
+             csv1 = false ? "data1.csv" : "https://raw.githubusercontent.com/pfescriva/Super-repository/main/data1.csv"
+             csv2 = false ? "data2.csv" : "https://raw.githubusercontent.com/pfescriva/Super-repository/main/data2.csv"
+             
+             function getTable(){
+                if(document.getElementById('options').value=='opt'){
+                    d3.select("table").text("")
+                }
+                if(document.getElementById('options ').value=='1'){
+                    d3.select("table").text("")
+                    d3.csv(csv1,
+                    (d,i,c) => {
+                            d3.select("table")
+                            .append("tr")
+                            .selectAll("td")
+                            .data(c).join("td").text(e => d[e])
+                                   
+                    })
+                 }
+                else if (document.getElementById(' options ').value=='2'){
+                    d3.select("table").text("")
+                    d3.csv(csv2,
+                    (d,i,c) => {
+                            d3.select("table")
+                            .append("tr")
+                            .selectAll("td")
+                            .data(c).join("td").text(e => d[e])
+                    })
+                }
+            }
+             
+     </script>
+       
+       
+    </body>
+</html>
